@@ -1,0 +1,51 @@
+<% provide(:title, "정보 수정") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <h1>정보 수정</h1>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :name, "이름" %><br />
+          <%= f.text_field :name, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, "이메일" %><br />
+          <%= f.email_field :email, class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :password, "비밀번호" %> <i>(변경하지 않으려면 비워두세요.)</i><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "비밀번호 확인" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password, "현재 비밀번호" %> <i>(정보 변경을 위해서는 비밀번호가 필요합니다.)</i><br />
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "저장", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <h3>탈퇴</h3>
+
+      <p>만족스럽지 않으세요? <%= button_to "탈퇴", registration_path(resource_name), data: { confirm: "정말 탈퇴하시겠습니까?" }, method: :delete, class: "btn btn-danger" %></p>
+
+      <%= link_to "뒤로", :back %>
+    </div>
+  </div>
+</div>

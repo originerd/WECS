@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  box_id: 
+  type: 
+  description: MyString
+
+two:
+  box_id: 
+  type: 
+  description: MyString

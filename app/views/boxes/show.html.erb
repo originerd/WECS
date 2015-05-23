@@ -1,0 +1,9 @@
+<% provide(:title, @box.name) %>
+<h1><%= @box.name %></h1>
+<h2><%= @box.description %></h2>
+
+<%= link_to '목록', boxes_path, class: "btn btn-primary" %>
+<% if user_signed_in? && current_user.can_update?(@box) %>
+  <%= link_to '수정', edit_box_path(@box), class: "btn btn-primary" %>
+  <%= link_to '삭제', @box, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }, class: "btn btn-danger" %>
+<% end %>
