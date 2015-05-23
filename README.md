@@ -133,7 +133,7 @@
 					* AUTH_TOKEN
 		* Response
 			* {"result": "success",
-"boxes": [{"result": "success","box": {"id": 100,"user_id": 100,"name": "EXAMPLE1","description": "EXAMPLE1","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}},{"result": "success","box": {"id": 101,"user_id": 101,"name": "EXAMPLE2","description": "EXAMPLE2","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}},{"result": "success","box": {"id": 102,"user_id": 102,"name": "EXAMPLE3","description": "EXAMPLE3","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}}]}
+"boxes": [{"id": 100,"user_id": 100,"name": "EXAMPLE1","description": "EXAMPLE1","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}},{"id": 101,"user_id": 101,"name": "EXAMPLE2","description": "EXAMPLE2","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}},{"id": 102,"user_id": 102,"name": "EXAMPLE3","description": "EXAMPLE3","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}]}
 1. Read a box
 	* Method
 		* GET
