@@ -2,41 +2,12 @@
 
 ## API
 ### Users
-1. Read all users
-	* Method
-		* GET
-	* URL
-		* http://wecs.co.kr/api/v1/users
-	* Headers
-		* None
-	* Parameters
-		* None
-	* Example
-		* Request
-			* URL
-				* http://wecs.co.kr/api/v1/users
-		* Response
-			* [{"id":100,:"email":"example@email.com","name":"Name"},{"id":101,:"email":"example2@email.com","name":"Name2"},{"id":102,:"email":"example3@email.com","name":"Name3"}]
-1. Read a user
-	* Method
-		* GET
-	* URL
-		* http://wecs.co.kr/api/v1/users/(:id)
-	* Headers
-		* None
-	* Paramters
-		* None
-	* Example
-		* Request
-			* URL
-				* http://wecs.co.kr/api/v1/users/1
-		* Response
-			* {"id":1,:"email":"example@email.com","name":"Name"}
+
 1. Create a user
 	* Method
 		* POST
 	* URL
-		* http://wecs.co.kr/api/v1/users
+		* http://wecs.herokuapp.com/api/v1/users
 	* Headers
 		* Content-Type
 	* Parameters
@@ -48,7 +19,7 @@
 	* Example
 		* Request
 			* URL
-				* http://wecs.co.kr/api/v1/users
+				* http://wecs.herokuapp.com/api/v1/users
 			* Headers
 				* Content-Type
 					* application/json
@@ -60,7 +31,7 @@
 	* Method
 		* PUT
 	* URL
-		* http://wecs.co.kr/api/v1/users
+		* http://wecs.herokuapp.com/api/v1/users
 	* Headers
 		* Content-Type
 		* Authorization
@@ -73,7 +44,7 @@
 	* Example
 		* Request
 			* URL
-				* http://wecs.co.kr/api/v1/users
+				* http://wecs.herokuapp.com/api/v1/users
 			* Headers
 				* Content-Type
 					* application/json
@@ -87,7 +58,7 @@
 	* Method
 		* DELETE
 	* URL
-		* http://wecs.co.kr/api/v1/users
+		* http://wecs.herokuapp.com/api/v1/users
 	* Headers
 		* Authorization
 	* Paramters
@@ -95,7 +66,7 @@
 	* Example
 		* Request
 			* URL
-				* http://wecs.co.kr/api/v1/users
+				* http://wecs.herokuapp.com/api/v1/users
 			* Authorization
 				* AUTH_TOKEN
 		* Response
@@ -106,7 +77,7 @@
 	* Method
 		* POST
 	* URL
-		* http://wecs.co.kr/api/v1/sessions
+		* http://wecs.herokuapp.com/api/v1/sessions
 	* Headers
 		* Content-Type
 	* Parameters
@@ -116,7 +87,7 @@
 	* Example
 		* Request
 			* URL
-				* http://wecs.co.kr/api/v1/sessions
+				* http://wecs.herokuapp.com/api/v1/sessions
 			* Headers
 				* Content-Type
 					* application/json
@@ -128,7 +99,7 @@
 	* Method
 		* DELETE
 	* URL
-		* http://wecs.co.kr/api/v1/sessions
+		* http://wecs.herokuapp.com/api/v1/sessions
 	* Headers
 		* Authorization
 	* Paramters
@@ -136,9 +107,112 @@
 	* Example
 		* Request
 			* URL
-				* http://wecs.co.kr/api/v1/sessions
+				* http://wecs.herokuapp.com/api/v1/sessions
 			* Headers
-				* Autorization
+				* Authorization
 					* AUTH_TOKEN
 		* Response
 			* {"result": "success"}
+
+### Boxes
+1. Read all boxes
+	* Method
+		* GET
+	* URL
+		* http://wecs.herokuapp.com/api/v1/boxes
+	* Headers
+		* Authorization
+	* Parameters
+		* None
+	* Example
+		* Request
+			* URL
+				* http://wecs.herokuapp.com/api/v1/boxes
+			* Headers
+				* Authorization
+					* AUTH_TOKEN
+		* Response
+			* {"result": "success",
+"boxes": [{"result": "success","box": {"id": 100,"user_id": 100,"name": "EXAMPLE1","description": "EXAMPLE1","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}},{"result": "success","box": {"id": 101,"user_id": 101,"name": "EXAMPLE2","description": "EXAMPLE2","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}},{"result": "success","box": {"id": 102,"user_id": 102,"name": "EXAMPLE3","description": "EXAMPLE3","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}}]}
+1. Read a box
+	* Method
+		* GET
+	* URL
+		* http://wecs.herokuapp.com/api/v1/users/(:id)
+	* Headers
+		* None
+	* Paramters
+		* None
+	* Example
+		* Request
+			* URL
+				* http://wecs.herokuapp.com/api/v1/users/100
+		* Response
+			* {"result": "success","box": {"id": 100,"user_id": 100,"name": "EXAMPLE","description": "EXAMPLE","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}}
+1. Create a box
+	* Method
+		* PUT
+	* URL
+		* http://wecs.herokuapp.com/api/v1/boxes
+	* Headers
+		* Content-Type
+		* Authorization
+	* Parameters
+		* box
+			* name
+			* description
+	* Example
+		* Request
+			* URL
+				* http://wecs.herokuapp.com/api/v1/boxes
+			* Headers
+				* Content-Type
+					* application/json
+				* Authorization
+					* AUTH_TOKEN
+			* Parameter Body
+				* {"box":{"name":"EXAMPLE", "description":"EXAMPLE"}}
+		* Response
+			* {"result": "success","box": {"id": 100,"user_id": 100,"name": "EXAMPLE","description": "EXAMPLE","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}}
+1. Update a box
+	* Method
+		* PUT
+	* URL
+		* http://wecs.herokuapp.com/api/v1/boxes/(:id)
+	* Headers
+		* Content-Type
+		* Authorization
+	* Parameters
+		* box
+			* name
+			* description
+	* Example
+		* Request
+			* URL
+				* http://wecs.herokuapp.com/api/v1/boxes/100
+			* Headers
+				* Content-Type
+					* application/json
+				* Authorization
+					* AUTH_TOKEN
+			* Parameter Body
+				* {"box":{"name":"EXAMPLE", "description":"EXAMPLE"}}
+		* Response
+			* {"result": "success","box": {"id": 100,"user_id": 100,"name": "EXAMPLE","description": "EXAMPLE","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}}
+1. Delete a box
+	* Method
+		* DELETE
+	* URL
+		* http://wecs.herokuapp.com/api/v1/boxes/(:id)
+	* Headers
+		* Authorization
+	* Paramters
+		* None
+	* Example
+		* Request
+			* URL
+				* http://wecs.herokuapp.com/api/v1/boxes/100
+			* Authorization
+				* AUTH_TOKEN
+		* Response
+			* {"result":"success"}
