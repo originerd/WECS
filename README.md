@@ -140,13 +140,16 @@
 	* URL
 		* http://wecs.herokuapp.com/api/v1/users/(:id)
 	* Headers
-		* None
+		* Authorization
 	* Paramters
 		* None
 	* Example
 		* Request
 			* URL
 				* http://wecs.herokuapp.com/api/v1/users/100
+			* Headers
+				* Authorization
+					* AUTH_TOKEN
 		* Response
 			* {"result": "success","box": {"id": 100,"user_id": 100,"name": "EXAMPLE","description": "EXAMPLE","created_at": "2015-05-23T18:00:32.589Z","updated_at": "2015-05-23T18:00:32.589Z"}}
 1. Create a box
